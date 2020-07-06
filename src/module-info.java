@@ -15,8 +15,11 @@
  */
 
 module org.japo.javafx {
-    requires javafx.controls;
-    requires javafx.graphics;
+    requires java.base;
     
+    requires javafx.controls;
+    requires javafx.fxml;
+    requires javafx.graphics;
+
     exports org.japo.javafx;
 }
