@@ -45,18 +45,15 @@ public class Main extends Application {
     // Punto de Inicio de la Aplicación    
     @Override
     public void start(Stage stage) throws Exception {
-        // URL de la Vista
+        // Vista Primaria
         URL urlView = getClass().getResource(VIEW);
-        System.out.println(urlView);
-
-        // Contenedor Principal
         Parent root = FXMLLoader.load(urlView);
 
         // Escena Primaria
         Scene scene = new Scene(root);
         stage.setScene(scene);
 
-        // Establecer Favicon
+        // Favicon
         InputStream iconStream = getClass().getResourceAsStream(FAVICON);
         Image image = new Image(iconStream);
         stage.getIcons().add(image);        
