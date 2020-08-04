@@ -33,32 +33,32 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-    // Constantes
-    public static final String VIEW = "/org/japo/javafx/views/main-view.fxml";
+    // Constants
     public static final String FAVICON = "/org/japo/javafx/images/favicon.png";
+    public static final String VIEW = "/org/japo/javafx/views/main-view.fxml";
 
-    // Argumentos Linea de Comandos
+    // Command Line Arguments
     public static void main(String[] args) {
         Application.launch(args);
     }
 
-    // Punto de Inicio de la Aplicación    
+    // Application Starting    
     @Override
     public void start(Stage stage) throws Exception {
-        // Vista Primaria
+        // Primary View
         URL urlView = getClass().getResource(VIEW);
         Parent root = FXMLLoader.load(urlView);
 
-        // Escena Primaria
+        // Primary Scene
         Scene scene = new Scene(root);
         stage.setScene(scene);
 
         // Favicon
-        InputStream iconStream = getClass().getResourceAsStream(FAVICON);
-        Image image = new Image(iconStream);
+        InputStream favicon = getClass().getResourceAsStream(FAVICON);
+        Image image = new Image(favicon);
         stage.getIcons().add(image);        
         
-        // Escenario Primario
+        // Primary Stage
         stage.setTitle("Hello JavaFX!");
         stage.show();
     }

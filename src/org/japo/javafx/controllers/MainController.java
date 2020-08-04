@@ -29,7 +29,7 @@ import javafx.scene.control.Label;
 public class MainController implements Initializable {
 
     @FXML
-    public Label label;
+    private Label label;
 
     /**
      * Initializes the controller class.
@@ -39,11 +39,11 @@ public class MainController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Obtiene Info
+        // Info
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
 
-        // Configura Etiqueta
+        // Label Text
         label.setText("Java: " + javaVersion + " - JavaFX: " + javafxVersion);
     }
 }

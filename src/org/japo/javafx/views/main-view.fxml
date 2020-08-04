@@ -10,8 +10,8 @@
            prefHeight="400.0" 
            prefWidth="600.0" 
            stylesheets="@../styles/main-view.css" 
-           xmlns="http://javafx.com/javafx/11.0.1" 
-           xmlns:fx="http://javafx.com/fxml/1" 
+           xmlns="http://javafx.com/javafx" 
+           xmlns:fx="http://javafx.com/fxml" 
            fx:controller="org.japo.javafx.controllers.MainController">
     <children>
         <Label fx:id="label" text="Label" textAlignment="CENTER" />
