@@ -18,11 +18,13 @@
  */
 package org.japo.javafx.main;
 
+import java.io.InputStream;
 import java.net.URL;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -33,6 +35,7 @@ public class Main extends Application {
 
     // Constantes
     public static final String VIEW = "/org/japo/javafx/views/main-view.fxml";
+    public static final String FAVICON = "/org/japo/javafx/images/favicon.png";
 
     // Argumentos Linea de Comandos
     public static void main(String[] args) {
@@ -51,10 +54,15 @@ public class Main extends Application {
 
         // Escena Primaria
         Scene scene = new Scene(root);
+        stage.setScene(scene);
 
+        // Establecer Favicon
+        InputStream iconStream = getClass().getResourceAsStream(FAVICON);
+        Image image = new Image(iconStream);
+        stage.getIcons().add(image);        
+        
         // Escenario Primario
         stage.setTitle("Hello JavaFX!");
-        stage.setScene(scene);
         stage.show();
     }
 }

@@ -1,0 +1,13 @@
+.root{   
+    -fx-base: cadetblue;
+}
+
+StackPane {
+    -fx-background-color: #ccffcc;
+}
+
+#label {
+    -fx-font-family: "Cambria";
+    -fx-font-size: 40px;
+    -fx-text-fill: #ff6600;
+}
