@@ -1,4 +1,4 @@
- /*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -30,7 +30,7 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-    // Argumentos Linea de Comandos
+    // Argumentos Línea de Comandos
     public static void main(String[] args) {
         Application.launch(args);
     }
@@ -40,15 +40,15 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         // Componentes Vista
         String version = System.getProperty("java.version");
-        Label l = new Label("Hello, JavaFX is running on Java" + version);
-        
-        // Conmtenedor Principal
+        Label lblText = new Label("Hello, JavaFX is running on Java" + version);
+
+        // Contenedor Principal
         StackPane root = new StackPane();
-        root.getChildren().addAll(l);
-        
+        root.getChildren().addAll(lblText);
+
         // Escena Primaria
-        Scene scene = new Scene(new StackPane(l), 300, 200);
-        
+        Scene scene = new Scene(root, 300, 200);
+
         // Escenario Primario
         stage.setTitle("Hello JavaFX!");
         stage.setScene(scene);
