@@ -21,5 +21,6 @@ module org.japo.javafx {
     requires javafx.fxml;
     requires javafx.graphics;
 
-    exports org.japo.javafx;
+    exports org.japo.javafx.main;
+    exports org.japo.javafx.controllers;
 }

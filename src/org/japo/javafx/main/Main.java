@@ -16,12 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.japo.javafx;
+package org.japo.javafx.main;
 
+import java.net.URL;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -30,7 +31,10 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-    // Argumentos Línea de Comandos
+    // Constantes
+    public static final String VIEW = "/org/japo/javafx/views/main-view.fxml";
+
+    // Argumentos Linea de Comandos
     public static void main(String[] args) {
         Application.launch(args);
     }
@@ -38,16 +42,15 @@ public class Main extends Application {
     // Punto de Inicio de la Aplicación    
     @Override
     public void start(Stage stage) throws Exception {
-        // Componentes Vista
-        String version = System.getProperty("java.version");
-        Label lblText = new Label("Hello, JavaFX is running on Java" + version);
+        // URL de la Vista
+        URL urlView = getClass().getResource(VIEW);
+        System.out.println(urlView);
 
         // Contenedor Principal
-        StackPane root = new StackPane();
-        root.getChildren().addAll(lblText);
+        Parent root = FXMLLoader.load(urlView);
 
         // Escena Primaria
-        Scene scene = new Scene(root, 300, 200);
+        Scene scene = new Scene(root);
 
         // Escenario Primario
         stage.setTitle("Hello JavaFX!");
